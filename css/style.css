@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* Noto Sans KO | Cormorant Infant | Public Sans */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Noto+Sans+KR:wght@100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Eng */
+.en {
+  font-family: "Public Sans", sans-serif;
+}
+.en2 {
+  font-family: "Cormorant Infant", serif;
+}
+
+/* layout */
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.wrap {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #000;
+  color: #fff;
+}
+
+/* header */
+
+header {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 60px;
+  box-sizing: border-box;
+
+  border: 2px solid gold;
+}
+
+header .logo {
+  color: #fff;
+}
+
+header .menu-open {
+  display: none;
+  transition: 0.3s;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header nav.gnb {
+  border: 2px solid tomato;
+}
+header nav.gnb ul {
+  display: flex;
+  justify-content: space-between;
+}
+header nav.gnb ul li {
+  margin-left: 70px;
+}
+header nav.gnb ul li:first-child {
+  margin-left: 0;
+}
+header nav.gnb ul li a {
+  display: inline-block;
+}

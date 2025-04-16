@@ -22,12 +22,12 @@ body {
   position: relative;
   margin: 0 auto;
   overflow: hidden;
-  background-color: #000;
   color: #fff;
+
+  height: 1000vh;
 }
 
 /* header */
-
 header {
   width: 100%;
   position: fixed;
@@ -40,8 +40,13 @@ header {
   align-items: center;
   padding: 30px 60px;
   box-sizing: border-box;
+  transition: 0.2s;
+}
 
-  border: 2px solid gold;
+/* header 영역 스크롤 시 반응 */
+header.active {
+  transform: translateY(-100%);
+  transition: 0.2s;
 }
 
 header .logo {
@@ -59,7 +64,6 @@ header a {
 }
 
 header nav.gnb {
-  border: 2px solid tomato;
 }
 header nav.gnb ul {
   display: flex;
@@ -73,4 +77,33 @@ header nav.gnb ul li:first-child {
 }
 header nav.gnb ul li a {
   display: inline-block;
+}
+
+/* Splitting JS */
+header nav.gnb ul li a .char {
+  display: inline-block;
+  position: relative;
+  color: transparent;
+  overflow: hidden;
+}
+header nav.gnb ul li a .char::before,
+header nav.gnb ul li a .char::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.6;
+  color: #fff;
+  content: attr(data-char);
+  transition: transform 0.35s;
+  transition-delay: calc(30ms * var(--char-index));
+}
+header nav.gnb ul li a .char::before {
+  transform: translateY(100%);
+}
+header nav.gnb ul li a:hover .char::before {
+  transform: translateY(0);
+  opacity: 1;
+}
+header nav.gnb ul li a:hover .char::after {
+  transform: translateY(-100%);
 }

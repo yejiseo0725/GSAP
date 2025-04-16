@@ -11,20 +11,17 @@
 }
 
 /* layout */
-
 body {
   font-family: "Noto Sans KR", sans-serif;
   font-size: 16px;
   line-height: 1.6;
+  background-color: #000;
 }
-
 .wrap {
   position: relative;
   margin: 0 auto;
   overflow: hidden;
   color: #fff;
-
-  height: 1000vh;
 }
 
 /* header */
@@ -106,4 +103,88 @@ header nav.gnb ul li a:hover .char::before {
 }
 header nav.gnb ul li a:hover .char::after {
   transform: translateY(-100%);
+}
+
+/* visual */
+.visual {
+  border: 2px solid gold;
+
+  position: relative;
+  width: 100%;
+  /* height: 100vh; */
+  letter-spacing: -1px;
+  padding-top: 125px;
+  box-sizing: border-box;
+}
+
+.visual .main-text {
+  display: inline-block;
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0 0 150px 60px;
+}
+.visual .main-text p {
+  overflow: hidden;
+}
+.visual .main-text p span {
+}
+
+.visual .sub-text {
+  margin-left: 20%;
+}
+.visual .sub-text p {
+}
+
+.visual .scroll {
+  position: fixed;
+  left: 60px;
+  bottom: 40px;
+}
+
+.visual .svg-ani {
+  position: absolute;
+  top: 9%;
+  right: -2%;
+  width: 55%;
+  transform: rotate(-10deg);
+}
+
+/* animation */
+.visual.motion .main-text {
+  transform: translate3d(0, 0, 0) skewY(0deg);
+  overflow: hidden;
+}
+.visual.motion .main-text p span {
+  display: block;
+  animation: textAni 1.4s linear;
+}
+.visual.motion .main-text p:nth-child(2) span {
+  animation-duration: 1.2s;
+}
+.visual.motion .main-text p:last-child span {
+  animation-duration: 1s;
+}
+
+@keyframes textAni {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+    transform: translate3d(0, -90px, 0) skewY(-10deg);
+    transform-origin: top left;
+  }
+}
+@keyframes textAni2 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+}
+
+.visual.motion .sub-text {
+  animation: textAni2 2s linear;
 }

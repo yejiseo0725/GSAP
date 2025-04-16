@@ -1,5 +1,12 @@
+// plugin setting
 $(function () {
+  // text animation effect
   Splitting();
+  // svg animation effect
+  $(".animate").scrolla({
+    mobile: true,
+    one: false,
+  });
 });
 
 $(function () {

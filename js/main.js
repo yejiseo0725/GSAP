@@ -44,7 +44,7 @@ $(function () {
         start: "0% 80%",
         end: "100% 100%",
         scrub: 1,
-        markers: true,
+        // markers: true,
       },
     })
 

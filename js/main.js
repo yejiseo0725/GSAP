@@ -72,4 +72,121 @@ $(function () {
       },
       0
     );
+
+  // .con02 GSAP
+  // title
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".con02",
+        start: "0% 100%",
+        end: "0% 20%",
+        scrub: 1,
+        // markers: true,
+      },
+    })
+
+    .fromTo(
+      ".con02 .title .a",
+      {
+        x: "-100%",
+      },
+      {
+        x: "0%",
+        ease: "none",
+        duration: 5,
+      },
+      0
+    )
+    .fromTo(
+      ".con02 .title .b",
+      {
+        x: "100%",
+      },
+      {
+        x: "0%",
+        ease: "none",
+        duration: 5,
+      },
+      0
+    );
+
+  // worklist
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".workList",
+        start: "0% 100%",
+        end: "0% 100%",
+        scrub: 1,
+        // markers: true,
+      },
+    })
+    .to(
+      ".wrap",
+      {
+        backgroundColor: "#000",
+        color: "#fff",
+        ease: "none",
+        duration: 5,
+      },
+      0
+    )
+    .to(
+      ".con02 .title",
+      {
+        position: "fixed",
+        ease: "none",
+        left: "0",
+        top: "0",
+        width: "100%",
+        duration: 5,
+      },
+      0
+    )
+
+    .fromTo(
+      ".workList",
+      {
+        margin: "0 auto",
+      },
+      {
+        margin: "100vh auto 0",
+        position: "relative",
+        zIndex: "10",
+        duration: 1,
+      },
+      0
+    );
+
+  // workList 끝난 후 title 설정
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".workList",
+        start: "100% 50%",
+        end: "100% 0%",
+        scrub: 1,
+        markers: true,
+      },
+    })
+
+    .to(
+      ".con02 .title .a",
+      {
+        x: "-100%",
+        ease: "none",
+        duration: 5,
+      },
+      0
+    )
+    .to(
+      ".con02 .title .b",
+      {
+        x: "100%",
+        ease: "none",
+        duration: 5,
+      },
+      0
+    );
 });

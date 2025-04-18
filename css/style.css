@@ -284,6 +284,7 @@ header nav.gnb ul li a:hover .char::after {
 
 /* section.con02 */
 .con02 {
+  padding-bottom: 1200px;
 }
 .con02 .title {
   width: 100%;

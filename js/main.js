@@ -35,7 +35,41 @@ $(function () {
     });
 });
 
-// * each(): object, 배열 모두 사용할 수 있는 반복함수로
-// length 속성을 갖는 배열과 유사배열객체들의 index를 기준으로
-// 첫 번째 매개변수로 배열이나 객체를 받고,
-// 두 번째 매개변수로 콜백함수 값을 인자로 받음
+// .con01 GSAP
+$(function () {
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".con01",
+        start: "0% 80%",
+        end: "100% 100%",
+        scrub: 1,
+        markers: true,
+      },
+    })
+
+    .to(
+      ".wrap",
+      { backgroundColor: "#fff", color: "#000", ease: "none", duration: 5 },
+      0
+    )
+    .to(
+      ".visual",
+      { backgroundColor: "#fff", color: "#000", ease: "none", duration: 5 },
+      0
+    )
+    .to(".svg-ani path", { stroke: "#000", ease: "none", duration: 5 }, 0)
+    .to(".scroll", { opacity: "0", ease: "none", duration: 5 }, 0)
+    .fromTo(
+      ".videoWrap video",
+      {
+        "clip-path": "inset(60% 60% 60% 60% round 30%)",
+      },
+      {
+        "clip-path": "inset(0% 0% 0% 0% round 0%)",
+        ease: "none",
+        duration: 10,
+      },
+      0
+    );
+});

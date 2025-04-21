@@ -7,6 +7,14 @@ $(function () {
     mobile: true,
     one: false,
   });
+  // simplyScroll
+  $(function () {
+    $(".con03 .list").simplyScroll({
+      speed: 4,
+      pauseOnHover: false,
+      pauseOnTouch: false,
+    });
+  });
 });
 
 // header: scroll 반응에 따라 사라지게 하기
@@ -167,7 +175,7 @@ $(function () {
         start: "100% 50%",
         end: "100% 0%",
         scrub: 1,
-        markers: true,
+        // markers: true,
       },
     })
 

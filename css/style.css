@@ -547,6 +547,7 @@ footer .textWrap a {
   display: inline-block;
   margin-top: -30px;
   color: #fff;
+  font-size: 7rem;
 }
 
 footer .bottom {
@@ -572,4 +573,82 @@ footer .bottom ul.sns li a {
 }
 footer .bottom ul.sns li:hover a {
   text-decoration: underline;
+}
+
+/* responsive */
+/* 1650 ~ 1301px */
+@media screen and (max-width: 1650px) {
+  .visual .svg-ani {
+    top: 17%;
+  }
+  .visual .sub-text {
+    margin-left: 10%;
+  }
+
+  .con03.motion .btnWrap {
+    right: 10%;
+  }
+}
+
+/* 1300 ~ 1025px */
+@media screen and (max-width: 1300px) {
+  .visual .main-text {
+    font-size: 11vw;
+    width: 100%;
+  }
+  .visual .svg-ani {
+    width: 56%;
+    top: 39%;
+  }
+  .visual .sub-text {
+    position: absolute;
+    left: 0;
+    bottom: 8%;
+    margin-left: 0;
+    width: 100%;
+    padding: 0 5%;
+    box-sizing: border-box;
+  }
+
+  footer .textWrap a {
+    font-size: 5rem;
+  }
+}
+
+/* 1024 ~ 801px */
+@media screen and (max-width: 1024px) {
+  .visual .svg-ani {
+    width: 76%;
+    top: 36%;
+    right: -1%;
+  }
+  .visual .sub-text {
+    bottom: -8%;
+  }
+
+  .con01 .title h2 {
+    font-size: 7vw;
+  }
+
+  .con02 .title {
+    font-size: 18vw;
+  }
+  .con02 ul.workList {
+    width: 90%;
+  }
+
+  .con03 .textWrap {
+    width: 85%;
+    font-size: 12vw;
+  }
+
+  footer .textWrap {
+    font-size: 9vw;
+  }
+  footer .textWrap a {
+    font-size: 9vw;
+  }
+  footer .bottom {
+    font-size: 1.2rem;
+  }
 }

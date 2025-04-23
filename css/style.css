@@ -21,9 +21,6 @@ body {
   font-family: "Noto Sans KR", sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  /* background-color: #000; */
-
-  height: 1000vh;
 }
 .wrap {
   position: relative;
@@ -59,7 +56,7 @@ header .logo {
   color: #fff;
 }
 
-header .menu-open {
+header .menuOpen {
   display: none;
   transition: 0.3s;
 }
@@ -289,8 +286,8 @@ header nav.gnb ul li a:hover .char::after {
 
 /* section.con02 */
 .con02 {
-  padding-bottom: 1200px;
 }
+
 .con02 .title {
   width: 100%;
   height: 100vh;
@@ -386,6 +383,9 @@ header nav.gnb ul li a:hover .char::after {
 .con02 ul.workList li a:hover .imgBox::after {
   width: 168px;
   height: 168px;
+}
+.con02 ul.workList li a:hover .imgBox img {
+  filter: brightness(50%);
 }
 
 .con02 ul.workList li a .imgBox img {
@@ -650,5 +650,198 @@ footer .bottom ul.sns li:hover a {
   }
   footer .bottom {
     font-size: 1.2rem;
+  }
+}
+
+/* 800 ~ 501px */
+/* mobile GNB bar */
+@media screen and (max-width: 800px) {
+  .wrap {
+    font-size: 18px;
+  }
+
+  header {
+    padding: 3% 5%;
+  }
+  header .menuOpen {
+    display: block;
+    position: relative;
+    width: 32px;
+    height: 10px;
+    margin-top: 10px;
+    transition: top 0.5s;
+    z-index: 101;
+  }
+  header .menuOpen span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    transition: 0.3s;
+  }
+  header .menuOpen span.a {
+    top: 0;
+  }
+  header .menuOpen span.b {
+    bottom: 0;
+  }
+
+  .gnb {
+    position: fixed;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    background: #fff;
+    left: 0;
+    top: -100%;
+    color: #000;
+    z-index: 100;
+    transition: top 0.5s;
+  }
+  header nav.gnb ul {
+    display: block;
+    width: 80%;
+  }
+  header nav.gnb ul li {
+    margin-left: 0;
+  }
+  header nav.gnb ul li a {
+    font-size: 18vw;
+    line-height: 1.4;
+    letter-spacing: -1px;
+  }
+  header nav.gnb ul li:nth-child(2) a {
+    font-family: "Cormorant Infant", serif;
+    font-weight: 600;
+  }
+  header nav.gnb ul li a .char {
+    color: #000;
+    overflow: inherit;
+    margin: 20% auto;
+  }
+  header nav.gnb ul li a .char::before,
+  header nav.gnb ul li a .char::after {
+    display: none;
+  }
+
+  /* GNB menuOpen */
+  .gnb.menu-on {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+  }
+
+  body.menu-on {
+    overflow: hidden;
+  }
+
+  header .menuOpen.menu-on span.a {
+    background: #000;
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  header .menuOpen.menu-on span.b {
+    background: #000;
+    transform: rotate(-45deg) translate(2px, -1px);
+  }
+
+  .visual .svg-ani {
+    width: 85%;
+    right: 3%;
+  }
+  .visual .scroll {
+    left: 5%;
+    bottom: 2%;
+  }
+
+  .con02 ul.workList li {
+    width: 100%;
+    margin: 0 auto 50px;
+  }
+  .con02 ul.workList li a .imgBox::before,
+  .con02 ul.workList li a .imgBox::after {
+    display: none;
+  }
+  .con02 ul.workList li a .textBox h3 {
+    font-size: 28px;
+  }
+  .con02 .title .en2 {
+    font-size: 20vw;
+  }
+
+  .con03 .btnWrap a {
+    width: 90px;
+    height: 90px;
+  }
+  .con03 .btnWrap a:hover {
+    border-color: #fff;
+  }
+  .con03 .btnWrap a:before {
+    display: none;
+  }
+  .con03 .btnWrap a img:nth-child(2) {
+    display: none;
+  }
+
+  .con03.motion .simply-scroll .simply-scroll-clip {
+    transform: rotate(10deg) translate(20%, 400px) scale(1.2);
+  }
+  .simply-scroll .simply-scroll-clip .simply-scroll-list li {
+    width: 200px;
+  }
+
+  footer {
+    height: 50vh;
+  }
+  footer .textWrap {
+    width: 90%;
+    padding: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  footer .textWrap .title {
+    padding-left: 0;
+  }
+}
+
+/* 500 ~ 401px */
+@media screen and (max-width: 500px) {
+  br.mo {
+    display: none;
+  }
+
+  .visual {
+    padding-top: 100px;
+  }
+  .visual .svg-ani {
+    width: 100%;
+    right: -1%;
+    top: 30%;
+  }
+
+  .visual.motion .main-text {
+    margin: 0 0 150px 25px;
+  }
+  .visual.motion .sub-text {
+    bottom: 10%;
+  }
+
+  .con03 .textWrap ul li .en2 {
+    padding-left: 10px;
+  }
+
+  footer .bottom {
+    padding: 0 30px;
+  }
+  footer .bottom ul.sns li {
+    margin-right: 10px;
+  }
+}
+
+/* 400 ~ 301px */
+@media screen and (max-width: 400px) {
+  .con03.motion .simply-scroll .simply-scroll-clip {
+    transform: rotate(10deg) translate(20%, 300px) scale(1.2);
   }
 }

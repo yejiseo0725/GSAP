@@ -1,3 +1,8 @@
+// a 속성제거 (a 클릭시 위로 튕기는 현상 제거) ---> 아무것도 없는 a 링크 클릭 방지
+$(document).on("click", 'a[herf="#"]', function (e) {
+  e.preventDefault();
+});
+
 // plugin setting
 $(function () {
   // text animation effect
@@ -197,4 +202,13 @@ $(function () {
       },
       0
     );
+});
+
+// GNB menuOpen
+$(function () {
+  $(".menuOpen").on("click", function () {
+    $(".gnb").toggleClass("menu-on");
+    $(this).toggleClass("menu-on");
+    $("body").toggleClass("menu-on"); // 스크롤 방지
+  });
 });

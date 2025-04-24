@@ -122,11 +122,42 @@
                     end: 'bottom top',
                     scrub: 1,
                     pin: true,
-                    markers: true,
+                    // markers: true,
                 }
             })
                 .to('.visual h1', { 'opcity': '1', 'ease': 'none', 'duration': '10' }, 5)
                 .to('.visual img', { 'scale': '0.4', 'ease': 'none', 'duration': '10', 'opacity': '0.3' }, 5)
+
+            // 02.imgBox
+            // toArray: 요소 안의 인스턴스를 배열로 만들어 주는 기능
+            // --> 배열로 만든 뒤, forEach 메소드를 이용해 반복문으로 변수를 받아,
+            // 그 변수마다 scrollTrigger 가 적용되도록 함
+            gsap.utils.toArray('.imgBox').forEach(function (imgBox) {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: imgBox,
+                        start: '50% 100%',
+                        toggleClass: { 'targets': imgBox, className: 'active' },
+                        scrub: 1,
+                        // markers: true,
+                    }
+                })
+            })
+
+            // 03.textBox
+            gsap.utils.toArray('.textBox').forEach(function (textBox) {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: textBox,
+                        start: '50% 80%',
+                        end: '100% 0%',
+                        toggleClass: { 'targets': textBox, className: 'active' },
+                        scrub: 1,
+                        markers: true,
+                    }
+                })
+            })
+
         });
     </script>
 </body>

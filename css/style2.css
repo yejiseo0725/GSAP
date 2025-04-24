@@ -22,6 +22,7 @@ body {
   position: relative;
   overflow: hidden;
   /* background: #111606; */
+  margin-bottom: 500px;
 }
 
 img {
@@ -164,4 +165,51 @@ section .inner {
   font-weight: 400;
   color: #333;
   -webkit-text-stroke: 0;
+}
+
+/* imgBox.active */
+.imgBox {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+.imgBox::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #b1dd40;
+  transition: all 0.8s;
+  transition-delay: 0.4s;
+  z-index: 2;
+}
+.imgBox::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #111606;
+  transition: all 0.8s;
+  z-index: 3;
+}
+.imgBox.active::before {
+  height: 0;
+}
+.imgBox.active::after {
+  height: 0;
+}
+
+/* textBox.active */
+.textBox span {
+  margin: 50px 0;
+  transition: all 0.8s;
+  opacity: 0;
+}
+.textBox.active span {
+  margin: 0;
+  opacity: 1;
 }

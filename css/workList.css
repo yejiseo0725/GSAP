@@ -22,12 +22,9 @@ body {
   overflow: hidden;
   background: #000;
   color: #fff;
-  margin-bottom: 3000px;
 }
 
 .visual {
-  border: 2px solid gold;
-
   height: 100vh;
   padding-top: 150px;
   box-sizing: border-box;
@@ -50,7 +47,7 @@ body {
   font-size: 80px;
 }
 .visual .inner .textBox .subTitle {
-  font-size: 14px;
+  font-size: 18px;
   margin: 30px 0;
 }
 .visual .inner .textBox .text {
@@ -110,7 +107,9 @@ body {
 
 /* work */
 .work {
-  /* height: 100vh; */
+  position: relative;
+  height: 100vh;
+  border: 2px solid tomato;
 }
 
 .work ul {
@@ -119,12 +118,10 @@ body {
   box-sizing: border-box;
 }
 .work ul li {
-  width: 500px;
+  width: 600px;
   padding: 100px;
   box-sizing: border-box;
   flex-shrink: 0 !important;
-
-  border: 2px solid teal;
 }
 
 .work ul li a {
@@ -136,6 +133,7 @@ body {
 }
 .work ul li a .imgBox {
   position: relative;
+  clip-path: inset(30%);
 }
 .work ul li a .imgBox img {
   width: 100%;
@@ -193,12 +191,11 @@ body {
 }
 
 .work ul li a .textBox {
-  border: 2px solid green;
-
   position: absolute;
   left: 0;
   bottom: 10%;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
 }
 .work ul li a .textBox .title {
   font-size: 36px;
@@ -206,4 +203,164 @@ body {
 .work ul li a .textBox .text {
   font-size: 18px;
   padding-left: 5px;
+}
+
+/* counter */
+.work .counter {
+  position: absolute;
+  font-size: 50px;
+  right: 8%;
+  bottom: 8%;
+  letter-spacing: -3px;
+  color: #fff;
+  z-index: 1;
+}
+.work .counter .now {
+  font-size: 2.5rem;
+}
+.work ul li a .num {
+  width: 100%;
+}
+
+.con03 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.con03 h2 {
+  font-size: 5rem;
+  color: #fff;
+}
+
+/* responsive */
+
+/* 1300-1025 */
+@media screen and (max-width: 1300px) {
+  .visual {
+    padding-top: 120px;
+  }
+  .visual .inner {
+    width: 90%;
+  }
+
+  .work ul {
+    padding: 3% 20%;
+  }
+}
+
+/* 1024-800 */
+@media screen and (max-width: 1024px) {
+  .visual .inner .textBox {
+    width: 50%;
+  }
+  .visual .inner .textBox .title {
+    font-size: 20vw;
+  }
+  .visual .inner .textBox .title .en2 {
+    font-size: 23vw;
+  }
+
+  .visual .inner .aniBox {
+    bottom: 10%;
+  }
+
+  .work {
+    height: auto;
+  }
+  .work ul {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0% 5%;
+  }
+  .work ul li {
+    width: 45%;
+    padding: 0;
+    margin-top: 150px;
+  }
+  .work ul li:nth-child(2n) {
+    margin-top: 0;
+  }
+
+  .work ul li a .imgBox {
+    clip-path: none;
+  }
+  .work ul li a .imgBox::before,
+  .work ul li a .imgBox::after {
+    display: none;
+  }
+  .work ul li a:hover .imgBox img {
+    filter: brightness(100%);
+  }
+
+  .work ul li a .textBox {
+    position: static;
+    opacity: 1;
+  }
+  .work ul li a .textBox .title {
+    font-size: 1.6rem;
+  }
+  .work ul li a .textBox .text {
+    font-size: 1rem;
+  }
+}
+
+/* 800-501 */
+@media screen and (max-width: 800px) {
+  .visual .inner .textBox {
+    padding-left: 5px;
+  }
+  .visual .inner .textBox .subTitle {
+    font-size: 1.7rem;
+  }
+  .visual .inner .textBox .text {
+    font-size: 1.2rem;
+  }
+
+  .visual .inner .aniBox {
+    width: 200px;
+    height: 200px;
+    margin-top: 460px;
+    bottom: -20%;
+  }
+
+  .work ul li {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+}
+
+/* 500 이하 */
+@media screen and (max-width: 500px) {
+  .visual {
+    height: 70vh;
+    padding-top: 110px;
+  }
+
+  .visual .inner .textBox {
+    width: 100%;
+  }
+  .visual .inner .textBox .text {
+    width: 100%;
+  }
+  .visual .inner .textBox .title .en2 {
+    margin-left: -20px;
+  }
+  .visual .inner .textBox .subTitle {
+    font-size: 20px;
+  }
+
+  .visual .inner .aniBox {
+    display: none;
+  }
+
+  .work ul li a .textBox .title {
+    font-size: 2rem;
+  }
+
+  .con03 h2 {
+    font-size: 2rem;
+  }
 }

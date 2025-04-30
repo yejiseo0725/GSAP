@@ -41,17 +41,17 @@ body {
   line-height: 1.4;
 }
 .visual .inner .textBox .title {
-  font-size: 60px;
+  font-size: 5.5rem;
 }
 .visual .inner .textBox .title .en2 {
-  font-size: 80px;
+  font-size: 7rem;
 }
 .visual .inner .textBox .subTitle {
-  font-size: 18px;
+  font-size: 1.7rem;
   margin: 30px 0;
 }
 .visual .inner .textBox .text {
-  font-size: 12px;
+  font-size: 1.3rem;
   margin-top: -10px;
 }
 
@@ -111,14 +111,13 @@ body {
   height: 100vh;
   border: 2px solid tomato;
 }
-
 .work ul {
   display: flex;
   padding: 3% 30%;
   box-sizing: border-box;
 }
 .work ul li {
-  width: 600px;
+  width: 700px;
   padding: 100px;
   box-sizing: border-box;
   flex-shrink: 0 !important;
@@ -269,18 +268,16 @@ body {
   .work {
     height: auto;
   }
+
   .work ul {
-    flex-wrap: wrap;
-    justify-content: space-between;
     padding: 0% 5%;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
   .work ul li {
-    width: 45%;
     padding: 0;
+    width: 45%;
     margin-top: 150px;
-  }
-  .work ul li:nth-child(2n) {
-    margin-top: 0;
   }
 
   .work ul li a .imgBox {

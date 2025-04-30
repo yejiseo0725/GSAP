@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y축 방향 갤러리</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/Ygallery.css">
+</head>
+
+<body>
+
+    <div class="wrap">
+        <section class="con01">
+            <div class="textBox">
+                <h1 class="logo"><img src="/images/logo03.png" alt="logo"></h1>
+                <p class="title en1">scrollTrigger</p>
+                <p class="txt en">실전! 웹사이트제작 Step By Step 시리즈 입니다.</p>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <div class="inner">
+                <div class="textBox">
+                    <h2>Clone <span>Coding</span></h2>
+                    <p class="txt">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                    <ul>
+                        <li><a href="#">Concierge</a></li>
+                        <li><a href="#">Lorem ipsum</a></li>
+                        <li><a href="#">Lorem dolor sum</a></li>
+                        <li><a href="#">Summer Autumn Winter</a></li>
+                        <li><a href="#">Remremrem</a></li>
+                        <li><a href="#">Reading Books</a></li>
+                        <li><a href="#">Laha</a></li>
+                    </ul>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+
+                <ul class="imgBox">
+                    <li class="img1 upBox"><img src="/images/img1.jpg" alt=""></li>
+                    <li class="img2 upBox"><img src="/images/img2.jpg" alt=""></li>
+                    <li class="img3 upBox"><img src="/images/img3.jpg" alt=""></li>
+                    <li class="img4 upBox"><img src="/images/img4.jpg" alt=""></li>
+                    <li class="img5 upBox"><img src="/images/img5.jpg" alt=""></li>
+                    <li class="img6 upBox"><img src="/images/img6.jpg" alt=""></li>
+                    <li class="img7 upBox"><img src="/images/img7.jpg" alt=""></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="con03">
+            <div class="textBox">
+                <h2 class="en1">Thank You!</h2>
+            </div>
+        </section>
+    </div>
+
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <!-- GSAP cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // gallery
+        let upBox = document.querySelectorAll('.upBox');
+
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.gallery',
+                pin: true,
+                scrub: 3,
+                start: 'top top',
+                end: '+=400%', // 시작부분에서 400% 까지 스크롤한 후 종료
+                markers: true,
+            }
+        })
+
+        tl.from(upBox, { 'y': '400%', 'duration': '8', 'ease': 'none', 'stagger': '6' }) // stagger: 각 애니메이션의 시간차를 둠
+        tl.to(upBox, { 'y': '0' })
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

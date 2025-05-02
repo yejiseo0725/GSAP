@@ -12,6 +12,7 @@
 <body>
 
     <div class="wrap">
+
         <section class="con01">
             <div class="textBox">
                 <h1 class="logo"><img src="/images/J.youngLogo.png" alt=""></h1>
@@ -93,13 +94,53 @@
         <section class="con03">
             <h2 class="en1">Thank YOou!</h2>
         </section>
-    </div>
 
+    </div>
 
     <script src="/js/jquery-3.3.1.min.js"></script>
     <!-- GSAP cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        let activeImg;
+
+        gsap.utils.toArray('.con02 ul li a').forEach((elem) => {
+            let image = elem.querySelector('img.fadeImg'),
+
+                align = e => {
+                    setX(e.clientX);
+                    setY(e.clientY);
+                },
+
+                startPoint = () => document.addEventListener('mousemove', align),
+                stopPoint = () => document.removeEventListener('mousemove', align),
+
+                fade = gsap.to(image, { autoAlpha: 0.8, ease: 'none', paused: true })
+
+            elem.addEventListener('mouseenter', (e) => {
+                fade.play();
+                startPoint();
+
+                if (activeImg) {
+                    gsap.set(image, {
+                        x: gsap.getProperty(activeImg, "x"),
+                        y: gsap.getProperty(activeImg, "y"),
+                    })
+                }
+                activeImg = image;
+                setX = gsap.quickTo(image, "x", { duration: 0.5, ease: Elastic });
+                setY = gsap.quickTo(image, "y", { duration: 0.5, ease: Elastic });
+
+                align(e);
+            })
+
+            elem.addEventListener('mouseleave', () => fade.reverse())
+        })
+
+    </script>
 </body>
 
 </html>

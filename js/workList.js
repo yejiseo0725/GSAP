@@ -11,7 +11,7 @@ $(function () {
   gsap.registerPlugin(ScrollTrigger);
 
   ScrollTrigger.matchMedia({
-    "(min-width: 300px)": function () {
+    "(min-width: 1024px)": function () {
       // horizontal scroll
       let list = gsap.utils.toArray(".work ul li");
       let scrollTween = gsap.to(list, {

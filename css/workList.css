@@ -39,6 +39,8 @@ body {
 .visual .inner .textBox {
   width: 60%;
   line-height: 1.4;
+
+  border: 2px solid tomato;
 }
 .visual .inner .textBox .title {
   font-size: 5.5rem;
